@@ -3,26 +3,28 @@ import java.util.Random;
 
 public class Sortirovka {
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    public static void main(String[] args){
-
-        System.out.print("Выберите действие.");
+    public static void main(String[] args) {
         randomNum();
     }
 
-    public static void randomNum(){
+    public static void randomNum() {
         Random rand = new Random();
 
-        ArrayList<Integer> arrint = new ArrayList<Integer>();
-
-        for (int i = 0; i < 10; i++){
-            arrint.add(i, rand.nextInt(100) - 50);
+        int[] arrint = new int[10];
+        for (int i = 0; i<arrint.length; i++)
+            arrint[i] = rand.nextInt(100) - 50;
+        int temp;
+        for (int i = arrint.length - 1; i > 0; i--){
+            for (int j = 0; j < i; j++){
+                if (Math.abs(arrint[j]) > Math.abs(arrint[j+1])){
+                    temp = arrint[j];
+                    arrint[j] = arrint[j+1];
+                    arrint[j+1] = temp;
+                }
+            }
         }
 
-        ArrayList<Integer> sort = new ArrayList<Integer>();
-        int min = arrint.get(0);
-        for (int i : arrint){
-            if (min < arrint.get(i)){
-                
-        }
+        for (int j : arrint)
+            System.out.print("   " + j);
     }
 }
