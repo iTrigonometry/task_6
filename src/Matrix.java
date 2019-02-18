@@ -11,7 +11,18 @@ public class Matrix {
             }
         }
         vivod(arrf);
-    }
+
+        float opr = arrf[0][0] * arrf[1][1] * arrf[2][2] +
+                arrf[0][1] * arrf[1][2] * arrf[2][0] +
+                arrf[1][0] * arrf[2][1] * arrf[0][2] -
+                arrf[0][2] * arrf[1][1] * arrf[2][0] -
+                arrf[1][2] * arrf[2][1] * arrf[0][0] -
+                arrf[0][1] * arrf[1][0] * arrf[2][2];
+
+        System.out.print("\nОпределитель равен: " + opr);
+     }
+
+
     public static void vivod(float[][] array){
         for (int i = 0; i < 3; i++){
             for (int j=0; j<3; j++) {
