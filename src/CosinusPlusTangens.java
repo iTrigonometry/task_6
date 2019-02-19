@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Sinus {
-    public static void main (String[] args){
+public class CosinusPlusTangens {
+    public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
         double a, b, mShag;
@@ -14,8 +14,7 @@ public class Sinus {
         mShag = input.nextDouble();
 
         for (;a<=b;a+=mShag){
-            System.out.print("\nsin(" + a + ") = " + (float)Math.sin(a * 3.14 / 180));
+            System.out.print("\ncos(" + a + ") + tg(" + a + ") = "+ (float)(Math.cos(a * 180/3.14) + Math.tan(a*180/3.14)));
         }
-
     }
 }
